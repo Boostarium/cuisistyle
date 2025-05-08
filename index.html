@@ -1,15 +1,248 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Cuisistyle : Boutique en ligne et blog culinaire - recettes, ustensiles, ingrédients premium">
+  <meta name="keywords" content="recettes, boutique cuisine, ingrédients premium, ustensiles, blog culinaire">
+  <meta name="author" content="Cuisistyle">
+  <meta name="robots" content="index, follow">
   <link rel="icon" href="https://via.placeholder.com/16x16.png?text=F">
   <title>Cuisistyle - Boutique & Blog Culinaire</title>
-  <!-- styles removed for brevity -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1em 0;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.5em;
+      color: #fff;
+      text-decoration: none;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1em;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .hero {
+      position: relative;
+      height: 80vh;
+      overflow: hidden;
+    }
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+    .hero-content {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+    }
+    .btn {
+      padding: 0.8em 1.5em;
+      background: #e67e22;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-primary:hover {
+      background: #cf711f;
+    }
+    .recipe-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+      margin-top: 3em;
+    }
+    .recipe-card {
+      width: 30%;
+      background: #f9f9f9;
+      padding: 1em;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .recipe-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .recipe-card h3 {
+      margin-top: 1em;
+      color: #333;
+    }
+    .recipe-card p {
+      font-size: 0.9em;
+      color: #555;
+      margin: 0.8em 0;
+    }
+    .blog-section {
+      margin-top: 3em;
+    }
+    .blog-post {
+      display: flex;
+      gap: 2em;
+      margin-bottom: 2em;
+    }
+    .blog-post img {
+      width: 50%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .blog-post .content {
+      flex: 1;
+    }
+    .blog-post h3 {
+      color: #333;
+    }
+    #contact {
+      padding: 2em 0;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      margin: 0.5em 0;
+      padding: 0.8em;
+    }
+  </style>
 </head>
 <body>
-  <!-- full content removed for brevity -->
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo">Cuisistyle</a>
+      <nav>
+        <ul>
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#recettes">Recettes</a></li>
+          <li><a href="#boutique">Boutique</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="cart-icon">
+        🛒 <span class="cart-count" id="cart-count">0</span>
+      </div>
+    </div>
+  </header>
+
+  <section id="accueil" class="hero">
+    <img src="https://source.unsplash.com/1600x900/?cuisine" alt="Plat gastronomique">
+    <div class="overlay"></div>
+    <div class="hero-content container">
+      <h1>Bienvenue sur Cuisistyle</h1>
+      <p>Explorez des recettes innovantes et achetez des ingrédients premium.</p>
+      <a href="#recettes" class="btn btn-primary">Voir les recettes</a>
+    </div>
+  </section>
+
+  <section id="recettes" class="recipe-section">
+    <div class="recipe-card">
+      <img src="https://source.unsplash.com/400x300/?dessert" alt="Recette dessert">
+      <h3>Gâteau au chocolat</h3>
+      <p>Un délicieux gâteau au chocolat pour vos occasions spéciales.</p>
+      <a href="#" class="btn">Voir la recette</a>
+    </div>
+    <div class="recipe-card">
+      <img src="https://source.unsplash.com/400x300/?pasta" alt="Recette pasta">
+      <h3>Pâtes à la carbonara</h3>
+      <p>Un plat classique et réconfortant de pâtes à la carbonara.</p>
+      <a href="#" class="btn">Voir la recette</a>
+    </div>
+    <div class="recipe-card">
+      <img src="https://source.unsplash.com/400x300/?salad" alt="Recette salade">
+      <h3>Salade méditerranéenne</h3>
+      <p>Une salade fraîche et légère avec des légumes et de la feta.</p>
+      <a href="#" class="btn">Voir la recette</a>
+    </div>
+  </section>
+
+  <section id="blog" class="blog-section">
+    <div class="blog-post">
+      <img src="https://source.unsplash.com/400x300/?cooking" alt="Blog 1">
+      <div class="content">
+        <h3>Comment réussir vos plats à la perfection</h3>
+        <p>Découvrez nos astuces pour cuisiner des plats dignes d'un chef.</p>
+        <a href="#" class="btn">Lire l'article</a>
+      </div>
+    </div>
+    <div class="blog-post">
+      <img src="https://source.unsplash.com/400x300/?ingredients" alt="Blog 2">
+      <div class="content">
+        <h3>Les ingrédients secrets pour des recettes savoureuses</h3>
+        <p>Apprenez à utiliser les meilleurs ingrédients pour améliorer vos plats.</p>
+        <a href="#" class="btn">Lire l'article</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Votre nom" required>
+        <input type="email" placeholder="Votre email" required>
+        <input type="tel" placeholder="Votre téléphone">
+        <textarea placeholder="Votre message" required></textarea>
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cartCount = document.getElementById('cart-count');
+      let count = 0;
+      document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', () => {
+          count++;
+          cartCount.textContent = count;
+          alert('Produit ajouté au panier.');
+        });
+      });
+    });
+  </script>
 </body>
 </html>
